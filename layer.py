@@ -12,8 +12,9 @@ class GCNlayer(nn.Module):
         self.output_dim = output_dim
 
         self.weight = nn.Parameter(torch.FloatTensor(input_dim, output_dim))
-        nn.init.uniform_(self.weight)
+        nn.init.uniform_(self.weight, a=0, b=1)
         self.bias = nn.Parameter(torch.FloatTensor(output_dim))
+        nn.init.constant_(self.bias, val=0.3)
 
     def forward(self, x, adj_mat):
         x = torch.matmul(x, self.weight)

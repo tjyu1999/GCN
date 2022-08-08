@@ -48,9 +48,7 @@ def Train(epoch):
           'Validation Loss: {:.4f}'.format(loss_val.item()),
           'Validation Accuracy: {:.4f}'.format(acc_val.item()),
           'Time: {:.4f}s'.format(time.time() - t))
-    print('==================================================', end='')
-    print('==================================================', end='')
-    print('=========================')
+    print('=' * 125)
 
 def Test():
     model.eval()
